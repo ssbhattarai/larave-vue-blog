@@ -28,10 +28,7 @@ window.Vue = require('vue');
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
-import VueFormulate from '@braid/vue-formulate'
 import moment from "moment"; //Import Moment
-
-Vue.use(VueFormulate)
 
 Vue.use(VueRouter)
 

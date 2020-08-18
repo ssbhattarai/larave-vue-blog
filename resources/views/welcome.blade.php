@@ -7,7 +7,7 @@
         <title>Laravel</title>
     </head>
     <body>
-    <div id="app">
+    <div id="app" class="container">
             <main-component></main-component>
     </div>
     </body>

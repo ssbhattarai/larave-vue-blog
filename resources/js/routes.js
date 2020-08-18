@@ -12,7 +12,7 @@ export const routes = [
         component:Category
     },
     { 
-        path:'/category-create',
+        path:'/create-category',
         component:CategoryCreate
     },
  

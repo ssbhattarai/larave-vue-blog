@@ -3,7 +3,7 @@
     <div class="container table-responsive">
         <h1 style="float:left">Category</h1>
          <router-link to="/create-category"><button type="button" class="btn btn-success float-right">Add new</button></router-link>
-        <table class="table">
+        <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">id</th>
@@ -16,9 +16,9 @@
             <tbody>
                 <tr v-for="category in categories" :key="category.id">
                 <th scope="row">{{category.id}}</th>
-                <td>{{category.category_name}}</td>
-                <td>{{category.created_by}}</td>
-                <td>{{category.created_at | formatDate}}</td>
+                <td>{{ category.category_name }}</td>
+                <td>{{ category.created_by }}</td>
+                <td>{{ category.created_at  | formatDate }}</td>
                 <td>
                     <button type="button" class="btn btn-success">Edit</button>
                     <button type="button" class="btn btn-danger">Delete</button>
