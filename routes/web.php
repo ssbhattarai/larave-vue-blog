@@ -19,4 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//added by me for api
+Route::resource('api/categories', 'Admin\CategoryController');
