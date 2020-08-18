@@ -2,7 +2,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h1 class="font-weight-bold">Create Category</h1>
+                <h1 class="font-weight-bold">Update Category</h1>
             </div>
             <!-- editMode ? updateUser() : createUser() -->
         <div class="card-body">

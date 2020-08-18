@@ -13,14 +13,14 @@
                 <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr v-for="category in categories" :key="category.id">
+            <tbody v-for="category in categories" :key="category.id">
+                <tr>
                 <th scope="row">{{category.id}}</th>
                 <td>{{ category.category_name }}</td>
                 <td>{{ category.created_by }}</td>
                 <td>{{ category.created_at  | formatDate }}</td>
                 <td>
-                    <button type="button" class="btn btn-success">Edit</button>
+                    <router-link :to="{name: 'updateCategory', params: { id: category.id }}"><button type="button" class="btn btn-success">Edit</button></router-link>
                     <button type="button" class="btn btn-danger">Delete</button>
                 </td>
                 </tr>
@@ -45,7 +45,7 @@ export default {
                         this.categories = data.data;
                     }
             )
-        }
+        },
 
     },
     created(){
