@@ -26,7 +26,39 @@ Vue.component('main-component', require('./components/Main.vue').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+import Main from './components/Main.vue'
+import Dashboard from './components/Dashboard.vue'
+import Category from './components/Category.vue'
+import CategoryCreate from './components/Category-Create.vue';
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/home',
+            name: 'dashboard',
+            component: Dashboard
+        },
+        {
+            path: '/home/category',
+            name: 'category',
+            component: Category,
+        },
+        {
+            path: '/home/create-category',
+            name: 'category-create',
+            component: CategoryCreate,
+        },
+    ],
+});
 
 const app = new Vue({
     el: '#app',
+    components: { Dashboard },
+    router,
 });

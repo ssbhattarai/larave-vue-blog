@@ -1,12 +1,12 @@
 @extends('layouts.layouts')
 
 @section('content')
-<div class="">
+<div>
         <div class="row">
             <div class="col-sm-2">
             <ul class="nav flex-column nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
+                    <router-link class="nav-link active" to="/home">Home</router-link>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
