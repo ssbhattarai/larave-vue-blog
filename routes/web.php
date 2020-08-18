@@ -21,9 +21,9 @@ Auth::routes();
 
 
 
-// Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/{any}', 'HomeController@index')->where('any', '.*');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{any}', 'HomeController@index');
 
 
 //added by me for api
-Route::resource('api/categories', 'Admin\CategoryController');
+// Route::resource('api/categories', 'Admin\CategoryController');

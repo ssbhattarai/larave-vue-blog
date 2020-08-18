@@ -19,7 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('main-component', require('./components/Main.vue').default);
+// Vue.component('main-component', require('./components/Main.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,38 +27,31 @@ Vue.component('main-component', require('./components/Main.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
+import VueFormulate from '@braid/vue-formulate'
+import moment from "moment"; //Import Moment
+
+Vue.use(VueFormulate)
 
 Vue.use(VueRouter)
 
-import Main from './components/Main.vue'
-import Dashboard from './components/Dashboard.vue'
-import Category from './components/Category.vue'
-import CategoryCreate from './components/Category-Create.vue';
+import { routes } from './routes';
 
 const router = new VueRouter({
-    mode: 'history',
-    routes: [
-        {
-            path: '/home',
-            name: 'dashboard',
-            component: Dashboard
-        },
-        {
-            path: '/home/category',
-            name: 'category',
-            component: Category,
-        },
-        {
-            path: '/home/create-category',
-            name: 'category-create',
-            component: CategoryCreate,
-        },
-    ],
-});
+    routes, 
+    mode: 'hash',
+
+})
 
 const app = new Vue({
     el: '#app',
-    components: { Dashboard },
-    router,
+    router
 });
+
+
+
+Vue.filter("formatDate", function(date) {
+
+	return moment(date).format('MMMM Do YYYY');
+
+}); 
