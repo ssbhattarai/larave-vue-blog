@@ -20,7 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::apiResources(
-	[
-		'category' => 'Admin\CategoryController'
-	]
+	['category' => 'Admin\CategoryController']
+);
+
+
+Route::apiResources(
+	['post' => 'Admin\PostController']
 );

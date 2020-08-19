@@ -10,7 +10,7 @@
                 A simple danger alert—check it out!
             </div>
 
-            <form class="container" @submit.prevent="createCategory()" method="post">
+            <form class="container" @submit.prevent="updateCategory()" method="post">
         <div class="form-group">
             <label for="Category">Category</label>
             <input type="text" class="form-control" v-model="category.category_name" id="Category" name="category"
@@ -32,34 +32,36 @@ export default {
         return{
             editMode: false,
             validateError: '',
+            categ : {},
             category: {
                 category_name: ''
             },
-            errors: null
+            errors: null,
+            id: '',
         }
     }, 
     methods: {
-        formValidation(){
-            if(this.category.category_name = ''){
-                validateError = 'Category must have a name';
-            }
+        GetCategory(){
+            id =this.$route.params.id;
+            console.log("i ma id", id);
+            // axios.get('api/category',)
         },
 
 
-        createCategory(e){
-            // e.preventDefault()x
-            axios.post('api/category', this.category).then( (response) => {
-                console.log(response);
-                this.$router.push('/category')
-            }
-            ).catch((error) =>{
-                console.log(error);
-            }
-            )
-        },
+        // createCategory(e){
+        //     // e.preventDefault()x
+        //     axios.post('api/category', this.category).then( (response) => {
+        //         console.log(response);
+        //         this.$router.push('/category')
+        //     }
+        //     ).catch((error) =>{
+        //         console.log(error);
+        //     }
+        //     )
+        // },
     },
     created(){
-        this.formValidation();
+        this.GetCategory();
     }
 
 }

@@ -12,6 +12,9 @@
                     <router-link class="nav-link" to="category">Category</router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link class="nav-link" to="/add-post">Add New Post</router-link>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item">

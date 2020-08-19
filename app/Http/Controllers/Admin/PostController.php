@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Category;
- 
-class CategoryController extends Controller
+use App\Post;
+
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,17 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return Category::all();
+        return Post::lastest()->all();
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -26,13 +36,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'category_name' => 'required'
-        ]);
-
-        return Category::create([
-           'category_name' => $request['category_name'],
-        ]);
+        //
     }
 
     /**
@@ -43,8 +47,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id); 
-        return $category;
+        //
     }
 
     /**
@@ -55,7 +58,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -67,13 +70,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'category_name' => 'required',
-        ]);
-
-        $user = Category::findOrFail($id);
-
-        $user->update($request->all());
+        //
     }
 
     /**
